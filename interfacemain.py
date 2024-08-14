@@ -1,27 +1,24 @@
-#----Modules----#
 import pandas as pd
 import matplotlib.pyplot as plt
 
-#----Global Variables----#
 quit = False
 
-#----Setup dataframe and query it here prior to creating visualisation and UI functions----#
-original_df = pd.read_csv('data/big_mac_aud.csv')
+original_df = pd.read_csv('dataset/all_seasons.csv')
 
 
-big_mac_df = pd.read_csv('data/big_mac_aud.csv',
+nba_df = pd.read_csv('dataset/all_seasons.csv',
                             header=None,
-                            names=['Country', 'Local', 'AUD', 'Date'])
+                            names=['Player Name', 'Player Height', 'Rebounds'])
 
 #----Define Functions Below----#
 def showOriginalData():
     print(original_df)
 
 def showUpdatedData():
-    print(big_mac_df)
+    print(nba_df)
 
 def showCharts():
-    big_mac_df.plot(
+    nba_df.plot(
                     kind='bar',
                     x='Country',
                     y='AUD',
