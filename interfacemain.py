@@ -20,8 +20,8 @@ def showUpdatedData():
 def showCharts():
     nba_df.plot(
                     kind='bar',
-                    x='Country',
-                    y='AUD',
+                    x='Player',
+                    y='Rebounds',
                     color='blue',
                     alpha=0.3,
                     title='Cost of a Big Mac in AUD')
