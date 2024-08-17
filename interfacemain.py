@@ -6,6 +6,8 @@ import matplotlib.pyplot as plt
 exit_program = False
 
 # Dataframe Setup
+nba_df = pd.read_csv('data/all_seasons.csv')
+
 nba_df = pd.read_csv('data/all_seasons.csv',
                      header=None,
                      names=['Player', 'Team', 'Rebounds', 'Points'])
