@@ -24,7 +24,7 @@ nba_df = pd.read_csv('data/relevantstats.csv',
 def displayOriginalData():
     print(og_df)
 
-def visualizePlayerRebounds():
+def visualisePlayerRebounds():
     nba_df.plot(
                 kind='bar',
                 x='Player',
@@ -39,20 +39,36 @@ def filterTopRebounders(min_rebounds):
     print(f"Players with more than {min_rebounds} rebounds:")
     print(filtered_df)
 
-def visualizeTopScorers(min_points):
-    top_scorers_df = nba_df[nba_df['Points'] > min_points]
-    top_scorers_df.plot(
-                kind='bar',
-                x='Player',
-                y='Points',
-                color='green',
-                alpha=0.5,
-                title=f'Players with more than {min_points} Points')
-    plt.show()
+def menuOptions():
+    global exit_program
 
-def getPlayerStats(player_name):
-    player_stats = nba_df[nba_df['Player'] == player_name]
-    if not player_stats.empty:
-        print(player_stats)
-    else:
-        print(f"No data found for player: {player_name}")
+    print("""Welcome to the NBA Player Stats Visualizer!
+          
+    Please select an option:
+    1 - Show the original dataset
+    2 - Visualize Player Rebounds
+    3 - Filter Players by Rebounds
+    4 - Quit Program
+        """)
+    
+    try:
+        selection = int(input('Enter Selection: '))
+
+        if selection == 1:
+            displayOriginalData()
+        elif selection == 2:
+            visualisePlayerRebounds()
+        elif selection == 3:
+            min_rebounds = int(input('Enter minimum rebounds to filter players: '))
+            filterTopRebounders(min_rebounds)
+        elif selection == 4:
+            exit_program = True
+        else:
+            print('Please select a number between 1 and 4.')
+
+    except ValueError:
+        print('Please enter a valid number.')
+
+# Main Program
+while not exit_program:
+    menuOptions()
