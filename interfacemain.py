@@ -49,9 +49,10 @@ def menuOptions():
           
     Please select an option:
     1 - Show the original dataset
-    2 - Visualize Player Rebounds
-    3 - Filter Players by Rebounds
-    4 - Quit Program
+    2 - Show the new dataset
+    3 - Visualize Player Rebounds
+    4 - Filter Players by Rebounds
+    5 - Quit Program
         """)
     
     try:
