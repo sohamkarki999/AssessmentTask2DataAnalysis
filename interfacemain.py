@@ -24,6 +24,9 @@ nba_df = pd.read_csv('data/relevantstats.csv',
 def displayOriginalData():
     print(og_df)
 
+def displayNewData():
+    print(nba_df)
+
 def visualisePlayerRebounds():
     nba_df.plot(
                 kind='bar',
@@ -57,14 +60,16 @@ def menuOptions():
         if selection == 1:
             displayOriginalData()
         elif selection == 2:
-            visualisePlayerRebounds()
+            displayNewData()
         elif selection == 3:
+            visualisePlayerRebounds()
+        elif selection == 4:
             min_rebounds = int(input('Enter minimum rebounds to filter players: '))
             filterTopRebounders(min_rebounds)
-        elif selection == 4:
+        elif selection == 5:
             exit_program = True
         else:
-            print('Please select a number between 1 and 4.')
+            print('Please select a number between 1 and 5.')
 
     except ValueError:
         print('Please enter a valid number.')
