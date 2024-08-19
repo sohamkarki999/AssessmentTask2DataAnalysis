@@ -37,22 +37,16 @@ def visualisePlayerRebounds():
                 title='Player Rebounds')
     plt.show()
 
-def filterTopRebounders(min_rebounds):
-    filtered_df = nba_df[nba_df['Rebounds'] > min_rebounds]
-    print(f"Players with more than {min_rebounds} rebounds:")
-    print(filtered_df)
-
 def menuOptions():
     global exit_program
 
-    print("""Welcome to the NBA Player Stats Visualizer!
+    print("""Welcome to the NBA Player Rebounds Database!
           
     Please select an option:
     1 - Show the original dataset
     2 - Show the new dataset
-    3 - Visualize Player Rebounds
-    4 - Filter Players by Rebounds
-    5 - Quit Program
+    3 - Visualise Player Rebounds
+    4 - Quit Program
         """)
     
     try:
@@ -65,9 +59,6 @@ def menuOptions():
         elif selection == 3:
             visualisePlayerRebounds()
         elif selection == 4:
-            min_rebounds = int(input('Enter minimum rebounds to filter players: '))
-            filterTopRebounders(min_rebounds)
-        elif selection == 5:
             exit_program = True
         else:
             print('Please select a number between 1 and 5.')
