@@ -10,7 +10,7 @@ file_path = 'data/all_seasons.csv'  # Path to the original dataset
 original_df = pd.read_csv(file_path)  # Load the original dataset
 
 # Columns to remove for data cleaning
-columns_to_delete = ['team_abbreviation', 'age', 'player_weight', 'college', 'country', 'draft_year', 'draft_round', 'draft_number', 'gp', 'pts', 'ast', 'net_rating', 'oreb_pct', 'dreb_pct', 'usg_pct', 'ts_pct', 'ast_pct']
+columns_to_delete = ['team_abbreviation', 'age', 'player_weight', 'college', 'country', 'draft_year', 'draft_round', 'draft_number', 'gp', 'pts', 'ast', 'net_rating', 'oreb_pct', 'dreb_pct', 'usg_pct', 'ts_pct', 'ast_pct', 'season']
 nba_df = original_df.drop(columns=columns_to_delete)  # Drop unnecessary columns
 
 # Save the cleaned dataset to a new CSV file
